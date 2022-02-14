@@ -1,0 +1,8 @@
+
+PRACTICAL ONES
+- add option to drop subjects (ad a button beside each row)
+- add option where changing the subject name after the table is created also reflects in the table
+
+WOULD BE NICE
+- save as .png/.xslx/
+- read table from a picture or a spreadsheet
