@@ -14,6 +14,46 @@ function dummy2(numb) {
     // console.log(subjectNames);
 }
 
+function howManySubjectsToAdd() {
+  var container = document.getElementById("page top");
+  var tempDiv = document.createElement("div");
+
+  tempDiv.appendChild(document.createElement("br"));
+  
+  let textInput = document.createTextNode("How many periods do you wish to add?");
+  textInput.type = "number";
+  tempDiv.appendChild(textInput);
+  
+  tempDiv.appendChild(document.createElement("br"));
+  
+  var newNumberOfPeriods = document.createElement("input");
+  newNumberOfPeriods.type = 'text';
+  newNumberOfPeriods.placeholder = 'Number of new periods';
+  tempDiv.appendChild(newNumberOfPeriods);
+
+  var okayButton = document.createElement("button");
+  okayButton.appendChild(document.createTextNode("Click to continue"));
+  
+  tempDiv.appendChild(okayButton);
+  container.appendChild(tempDiv);
+  
+  okayButton.onclick = function() {
+    var num = newNumberOfPeriods.value;
+    if (num < 1) {
+      alert("the new number of periods must be at least 1");
+      num = 0;
+    }
+    else if (num > 42) {
+      alert("there are only 42 periods in a week!");
+      num = 0;
+    }
+    container.removeChild(tempDiv);
+    for (let i = 0 ; i < num ; ++i) {
+      addSubject();
+    }
+  }
+}
+
 function addSubject() {
     
     // creating new default values in the arrays for storing the info of the new subject 
@@ -56,7 +96,7 @@ function createTable() {
     for (let i = 0 ; i < newId ; i++) {
         one = parseInt(subjectCounts[i]);
         if (one < 1) {
-            alert("Please enter a positive number of periods for the " + subjectNames[i] + " subject."); 
+            alert("Number of periods for each subject must be at least one."); 
             return;
         }
         if (isNaN(one)) {
