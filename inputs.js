@@ -7,7 +7,6 @@ let param = 0;
 
 // the div only triggers a change
 function dummy2(numb) {
-    console.log("this is #" + numb.currentTarget.id);
     let id = numb.currentTarget.id.substr(2);
     subjectNames[id] = document.getElementById('subjectName' + id).value;
     subjectCounts[id] = document.getElementById('subjectCount' + id).value;
@@ -66,8 +65,8 @@ function createTable() {
         }
         sum += one;
     }
-    if (sum != 45){
-        alert("The total number of periods must be 45");
+    if (sum != 42){
+        alert("The total number of periods must be 42");
         return; 
     }
     let uniqueSubjectNames = new Set(subjectNames);
@@ -102,6 +101,9 @@ function createTable() {
                 dnd.textContent = subjectNames[index];
                 row.appendChild(dnd);
                 counter += 1;
+                if (i > 5 && j == 3) {
+                  break;
+                }
             }
             table.appendChild(row);
         }
