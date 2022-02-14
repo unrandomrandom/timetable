@@ -1,0 +1,9 @@
+
+.row {
+    display: table-cell;    
+}
+
+.dnd {
+    outline-style: solid;
+    padding: 10px 20px 10px 20px; 
+}
