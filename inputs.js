@@ -28,11 +28,11 @@ function howManySubjectsToAdd() {
   
   var newNumberOfPeriods = document.createElement("input");
   newNumberOfPeriods.type = 'text';
-  newNumberOfPeriods.placeholder = 'Number of new periods';
+  newNumberOfPeriods.placeholder = 'Number of new subjects';
   tempDiv.appendChild(newNumberOfPeriods);
 
   var okayButton = document.createElement("button");
-  okayButton.appendChild(document.createTextNode("Click to continue"));
+  okayButton.appendChild(document.createTextNode("Click to add subjects"));
   
   tempDiv.appendChild(okayButton);
   container.appendChild(tempDiv);
