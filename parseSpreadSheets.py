@@ -3,7 +3,7 @@ from os import getcwd, chdir
 from pprint import pprint
 from json import dumps
 from random import choice
-
+import numpy as np
 
 
 ###########################################
@@ -152,8 +152,78 @@ subjectsByWeight = {
     ]
 }
 
+# helper
+# get dimenstions of multi dimensional containers (types: list, tuple, set, dict)
+# assumes that the container[i] and container[j] are of the same size
+def dimensions(obj):
+    d = []
+    j = obj
+    while True:
+        if type(j) in [list, tuple]:
+            d.append(len(j))
+            j = j[0]
+        elif type(j) is set:
+            d.append(len(j))
+            j = next(iter(j))
+        elif type(j) is dict:
+            d.append(len(j))
+            j = j[next(iter(j))]
+        else:
+            break
+    return d 
+
+#helper
+# prints a 3 * 7 * 42 thing nicely
+def printNicely(data):
+
+    f  = open('dump.txt', "w+")
+
+    periodsPerDay = [
+        9,
+        9,
+        9,
+        9,
+        6
+    ]
+
+    if type(data[0][0][0]) is not list:
+        for grade in range(3):
+            foo = 0
+            for row in range(5):
+                myStr = ''
+                for section in range(7):
+                    counter = 0
+                    while counter < periodsPerDay[foo]:
+                        myStr += str(data[grade][section][sum(periodsPerDay[:foo]) + counter]).center(5) + ", "
+                        counter += 1
+                    myStr = myStr.ljust(70)    
+                    myStr += " | "
+                myStr += "\n"
+                foo += 1
+                f.write(myStr)
+            f.write("\n ---------------------------------------------------------- \n")
+
+    else:
+        for grade in range(3):
+            foo = 0
+            for row in range(5):
+                myStr = ''
+                for section in range(7):
+                    counter = 0
+                    while counter < periodsPerDay[foo]:
+                        myStr += str(data[grade][section][row][counter]).center(5) + ", "
+                        counter += 1
+                    myStr = myStr.ljust(70)    
+                    myStr += " | "
+                myStr += "\n"
+                foo += 1
+                f.write(myStr)
+            f.write("\n ---------------------------------------------------------- \n")
+
+    f.close()
 
 
+        
 # helper
 def createInitial(studentTimeTable, teacherTimeTable):
     global periodsPerWeek, subjectsByWeight
@@ -170,11 +240,13 @@ def createInitial(studentTimeTable, teacherTimeTable):
     #assume every class is heavy; we will replace 15 of them with lights
     oneClass = [
         [
-            [
-                [2]*42
-            ] * 7
-        ] * 3
-    ] 
+            [2]*42
+        ] * 7
+    ] * 3
+
+    print("dimensions of the oneClass: ", dimensions(oneClass))
+
+
 
     #allocate the PT period
     '''
@@ -186,10 +258,13 @@ def createInitial(studentTimeTable, teacherTimeTable):
     for i in range(21):
         p = choice(v1)
         day = p // 5
-        period = p % 5
-        studentTimeTable[i//3][i%7][day][period] = 'PED'
-        oneClass[i//3][i%7][p] = 'PED'
+        period = p % 5 + 3
+        studentTimeTable[i//7][i%7][day][period] = 'PED'
+        oneClass[i//7][i%7][p] = 'PED'
         v1.remove(p)
+
+    printNicely(studentTimeTable)
+    exit(0)
 
     #allocate the rest of the periods as weights
     '''
@@ -200,12 +275,14 @@ def createInitial(studentTimeTable, teacherTimeTable):
         for section in range(7):
 
             for i in range(16): #since we have 16 lights
-                p = choice(42)
-                while (oneClass[grade][section][p] != 1): #dont want two 1's in the same period
+                p = choice(list(range(42)))
+                while (oneClass[grade][section][p] == 1): #dont want two 1's in the same period
                     p = (p+1) % 42
                 oneClass[grade][section][p] = 1
 
             #now we will rewrite oneClass with the subject names
+
+            printNicely(oneClass)
 
             # allocate the heavy subjects
             v1 = subjectsByWeight[2]*5 #each of the numbers 0 to 4 represents a heavy subject
@@ -242,23 +319,34 @@ def createClassTimeTable():
     teachersClasses, classsTeachers = classWiseTeacherAllocation()
 
     #access: timeTable[classIndex][dayIndex][periodIndex]
-    studentTimeTable = [
-        [
-            [
-                [[''] * 9],     # monday
-                [[''] * 9],     # tuesday 
-                [[''] * 9],     # wednesday
-                [[''] * 9],     # thursday
-                [[''] * 6],     # friday
-            ] * 7               # 7 sections in a grade
-        ] * 3                   #grades 6, 7, 8
-    ]
+    studentTimeTable = []
+    for grades in range(3):
+        oneGrade = []
+        for divisions in range(7):
+            oneClass = [
+                [''] * 9,     # monday
+                [''] * 9,     # tuesday 
+                [''] * 9,     # wednesday
+                [''] * 9,     # thursday
+                [''] * 6,     # friday
+            ]
+            oneGrade.append(oneClass)
+        studentTimeTable.append(oneGrade)
 
     teacherTimeTable = {
-        i: [ [[''] * 9], [[''] * 9],  [[''] * 9], [[''] * 9], [[''] * 6] ] for i in teachersClasses.keys() 
+        i: [ [''] * 9, [''] * 9,  [''] * 9, [''] * 9, [''] * 6 ] for i in teachersClasses.keys() 
     }
 
+    print("dimensions of the student time table: ", dimensions(studentTimeTable))
+    print("dimensions of the teacher time table: ", dimensions(teacherTimeTable))
+
+    # list(map(lambda x: print(x, ": ", teacherTimeTable[x]), teacherTimeTable.keys()))
+
+    # return
+
     createInitial(studentTimeTable, teacherTimeTable)
+
+    print("createInitial done")
 
     resolveConflicts(studentTimeTable, teacherTimeTable)
 
