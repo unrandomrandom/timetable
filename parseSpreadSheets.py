@@ -122,10 +122,8 @@ periodsPerWeek = {
     "COMP SC": 3,
     "LIBRARY": 1,
     "CLUB": 1,
-    "PED": 1,
     "MUSIC": 1,
     "ART": 1,
-    "LIBRARY": 1,
     "WELL BEING": 1
 }
 
@@ -137,10 +135,8 @@ subjectsByWeight = {
         "COMP SC",
         "LIBRARY" ,
         "CLUB" ,
-        "PED" ,
         "MUSIC" ,
         "ART" ,
-        "LIBRARY" ,
         "WELL BEING"
     ],
     2: [
@@ -151,6 +147,8 @@ subjectsByWeight = {
         "SOCIAL SCIENCE",
     ]
 }
+
+print("sum(periodsPerWeek.values()): ", sum(periodsPerWeek.values()))
 
 # helper
 # get dimenstions of multi dimensional containers (types: list, tuple, set, dict)
@@ -210,11 +208,13 @@ def printNicely(data):
                 myStr = ''
                 for section in range(7):
                     counter = 0
+                    smallStr = ''
                     while counter < periodsPerDay[foo]:
-                        myStr += str(data[grade][section][row][counter]).center(5) + ", "
+                        smallStr += str(data[grade][section][row][counter]).center(15) + ", "
                         counter += 1
-                    myStr = myStr.ljust(70)    
-                    myStr += " | "
+                    smallStr = smallStr.ljust(200)    
+                    smallStr += " | "
+                    myStr += smallStr
                 myStr += "\n"
                 foo += 1
                 f.write(myStr)
@@ -238,13 +238,15 @@ def createInitial(studentTimeTable, teacherTimeTable):
     ]
 
     #assume every class is heavy; we will replace 15 of them with lights
-    oneClass = [
-        [
-            [2]*42
-        ] * 7
-    ] * 3
+    oneClass = []
 
-    print("dimensions of the oneClass: ", dimensions(oneClass))
+    # for _ in range(3):
+    #     oneGrade = []
+    #     for _ in range(7):
+    #         oneGrade.append([''] * 42)
+    #     oneClass.append(oneGrade)
+
+    # print("dimensions of the oneClass: ", dimensions(oneClass))
 
 
 
@@ -255,16 +257,21 @@ def createInitial(studentTimeTable, teacherTimeTable):
     '''
 
     v1 = list(range(21))
+    ptPeriods = []
     for i in range(21):
         p = choice(v1)
         day = p // 5
         period = p % 5 + 3
+        print("grade: ", i//7+6, " | section: ", i%7, " | slot: ", [day, period])
         studentTimeTable[i//7][i%7][day][period] = 'PED'
-        oneClass[i//7][i%7][p] = 'PED'
+        ptPeriods.append(p)
         v1.remove(p)
 
-    printNicely(studentTimeTable)
-    exit(0)
+    # print("\n")
+    # usedUpSlots.sort()
+    # list(map(print, usedUpSlots))
+
+    # printNicely(studentTimeTable)
 
     #allocate the rest of the periods as weights
     '''
@@ -273,39 +280,37 @@ def createInitial(studentTimeTable, teacherTimeTable):
 
     for grade in range(3):
         for section in range(7):
+            
+            oneClass = ['']*42
+            oneClass[ptPeriods[grade*3 + section]] = 'PED'
 
+            v1 = []
+            for i in subjectsByWeight[1]:
+                v1 += [i] * periodsPerWeek[i]
             for i in range(16): #since we have 16 lights
                 p = choice(list(range(42)))
-                while (oneClass[grade][section][p] == 1): #dont want two 1's in the same period
+                while (oneClass[p] != ''): #dont want two 1's in the same period
                     p = (p+1) % 42
-                oneClass[grade][section][p] = 1
+                oneClass[p] = v1[i]
 
             #now we will rewrite oneClass with the subject names
-
-            printNicely(oneClass)
 
             # allocate the heavy subjects
             v1 = subjectsByWeight[2]*5 #each of the numbers 0 to 4 represents a heavy subject
             for i in range(25):
                 p = choice(v1)
-                oneClass[grade][section][oneClass.index(2)] = p
+                oneClass[oneClass.index('')] = p
                 v1.remove(p)
 
             #TODO figure out a way to push for about 1 of each heavy per day
-            
-            #allocate the lightweights away
-            v1 = []
-            for i in subjectsByWeight[2]:
-                v1 += [i] * periodsPerWeek[i]
-            for i in range(25):
-                p = choice(v1)
-                oneClass[grade][section][oneClass.index(1)] = p
-                v1.remove(p)
 
-        for i in range(42):
-            studentTimeTable[grade][section][i // 9][i % 9] = v1[i]
+            for i in range(42):
+                studentTimeTable[grade][section][i // 9][i % 9] = oneClass[i]
 
     #TODO fill out the teacher's time table as well
+
+    printNicely(studentTimeTable)
+
 
 # helper
 def resolveConflicts(studentTimeTable, teacherTimeTable):
