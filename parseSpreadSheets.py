@@ -1,3 +1,4 @@
+from typing import List
 from openpyxl import Workbook, load_workbook
 from os import getcwd, chdir
 from pprint import pprint
@@ -111,16 +112,16 @@ def classWiseTeacherAllocation():
 # constants
 # "I.ED/GK" is 2 separate periods in the spreadsheet
 periodsPerWeek = {
-    "ENGLISH": 5,
-    "HINDI": 5,
-    "MATHEMATICS": 5,
+    "ENG": 5,
+    "HIND": 5,
+    "MATHS": 5,
     "SCIENCE": 5,
-    "SOCIAL SCIENCE": 5,
-    "ARABIC": 4,
+    "S.ST": 5,
+    "ARAB": 4,
     "USST": 2,
     "I.ED/GK": 2,
-    "COMP SC": 3,
-    "LIBRARY": 1,
+    "CSC": 3,
+    "LIB": 1,
     "CLUB": 1,
     "MUSIC": 1,
     "ART": 1,
@@ -129,22 +130,22 @@ periodsPerWeek = {
 
 subjectsByWeight = {
     1: [
-        "ARABIC",
+        "ARAB",
         "USST",
         "I.ED/GK",
-        "COMP SC",
-        "LIBRARY" ,
+        "CSC",
+        "LIB" ,
         "CLUB" ,
         "MUSIC" ,
         "ART" ,
         "WELL BEING"
     ],
     2: [
-        "ENGLISH",
-        "HINDI",
-        "MATHEMATICS",
+        "ENG",
+        "HIND",
+        "MATHS",
         "SCIENCE",
-        "SOCIAL SCIENCE",
+        "S.ST",
     ]
 }
 
@@ -223,9 +224,29 @@ def printNicely(data):
     f.close()
 
 
+def alsoPrintNicely(data: dict):
+    f  = open('alsodump.txt', "w+")
+
+    periodsPerDay = [
+        9,
+        9,
+        9,
+        9,
+        6
+    ]
+
+    for day in range(5):
+        myStr = ''
+        for tr in list(data):
+            myStr += str(data[tr][day]).ljust(70)
+            myStr += ' | '
+        myStr += '\n'
+        f.write(myStr)
+
+    f.close()
         
 # helper
-def createInitial(studentTimeTable, teacherTimeTable):
+def createInitial(studentTimeTable, teacherTimeTable, classSubjectTeachers):
     global periodsPerWeek, subjectsByWeight
 
     #technically every 42 in this method should be replaced by sum(periodsPerDay)
@@ -305,11 +326,26 @@ def createInitial(studentTimeTable, teacherTimeTable):
             #TODO figure out a way to push for about 1 of each heavy per day
 
             for i in range(42):
+                className = chr(ord('6')+grade)+chr(ord('A')+section)
+
+                if oneClass[i] == 'I.ED/GK':
+                    tr1 = classSubjectTeachers[className]['I.ED']
+                    tr2 = classSubjectTeachers[className]['G.K']
+                    teacherTimeTable[tr1][i // 9][i % 9] += className
+                    teacherTimeTable[tr2][i // 9][i % 9] += className
+                elif oneClass[i] == 'CLUB' or oneClass[i] == 'WELL BEING':
+                    teacherName = classSubjectTeachers[className]["W.E/Club"]
+                    teacherTimeTable[teacherName][i // 9][i % 9] += className
+                else:
+                    teacherName = classSubjectTeachers[className][oneClass[i]]
+                    teacherTimeTable[teacherName][i // 9][i % 9] += className
+
                 studentTimeTable[grade][section][i // 9][i % 9] = oneClass[i]
 
     #TODO fill out the teacher's time table as well
 
     printNicely(studentTimeTable)
+    alsoPrintNicely(teacherTimeTable)
 
 
 # helper
@@ -321,7 +357,7 @@ def createClassTimeTable():
     global periodsPerWeek, subjectsByWeight
 
     # access: teacherSubject[teacherName][subjectName] = [className]
-    teachersClasses, classsTeachers = classWiseTeacherAllocation()
+    teachersClasses, classSubjectTeachers = classWiseTeacherAllocation()
 
     #access: timeTable[classIndex][dayIndex][periodIndex]
     studentTimeTable = []
@@ -338,9 +374,12 @@ def createClassTimeTable():
             oneGrade.append(oneClass)
         studentTimeTable.append(oneGrade)
 
-    teacherTimeTable = {
-        i: [ [''] * 9, [''] * 9,  [''] * 9, [''] * 9, [''] * 6 ] for i in teachersClasses.keys() 
-    }
+    teacherTimeTable = {}
+    for i in teachersClasses.keys():
+        teacherTimeTable[i] =  [ [''] * 9, [''] * 9,  [''] * 9, [''] * 9, [''] * 6 ]
+
+    # for i in teachersClasses.keys():
+    #     print(i, ": ", teacherTimeTable[i])
 
     print("dimensions of the student time table: ", dimensions(studentTimeTable))
     print("dimensions of the teacher time table: ", dimensions(teacherTimeTable))
@@ -349,7 +388,7 @@ def createClassTimeTable():
 
     # return
 
-    createInitial(studentTimeTable, teacherTimeTable)
+    createInitial(studentTimeTable, teacherTimeTable, classSubjectTeachers)
 
     print("createInitial done")
 
