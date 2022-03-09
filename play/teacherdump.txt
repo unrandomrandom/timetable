@@ -1,0 +1,328 @@
+RUKHSAR
+['ENG', 'ENG', 'ENG', 'ENG', 'ENG', 'ENG', 'ENG', 'ENG', 'ENG']       
+['ENG', '', '', 'ENG', 'ENG', 'ENG', '', 'ENG', 'ENG']                
+['ENG', 'ENG', '', '', '', '', 'ENG', 'ENG', '']                      
+['ENG', 'ENG', 'ENG', 'ENG', '', '', '', '', '']                      
+['ENG', '', '', '', '', 'ENG']                                        
+
+
+RENU
+['HIND', '', 'HIND', 'HIND', '', 'HIND', 'HIND', 'HIND', 'HIND']      
+['', 'HIND', 'HIND', 'HIND', 'HIND', '', 'HIND', '', '']              
+['', 'HIND', 'HIND', 'HIND', 'GK', '', 'LIB', 'HIND', 'HIND']         
+['', 'HIND', 'HIND', 'HIND', '', 'HIND', '', '', 'HIND']              
+['HIND', 'HIND', '', 'HIND', '', 'GK']                                
+
+
+ANNIE
+['MATHS', 'MATHS', 'MATHS', 'MATHS', 'MATHS', 'MATHS', 'MATHS', 'MATHS', 'MATHS']
+['MATHS', '', '', '', 'MATHS', '', '', '', 'MATHS']                   
+['MATHS', '', 'MATHS', '', '', 'MATHS', '', 'MATHS', '']              
+['', 'MATHS', '', '', 'MATHS', '', '', '', '']                        
+['', '', 'MATHS', 'MATHS', '', '']                                    
+
+
+NEELAM
+['SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']
+['', 'WELL BEING', '', 'SCIENCE', '', 'GK', 'SCIENCE', 'SCIENCE', ''] 
+['', '', '', 'SCIENCE', 'SCIENCE', 'SCIENCE', '', '', '']             
+['', 'CLUB', '', '', '', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']  
+['GK', '', 'SCIENCE', '', 'SCIENCE', '']                              
+
+
+MAHESWARI
+['S.ST', '', 'S.ST', 'S.ST', '', '', '', 'S.ST', '']                  
+['', '', '', 'S.ST', '', '', '', '', 'S.ST']                          
+['', '', 'S.ST', 'S.ST', 'S.ST', 'S.ST', 'S.ST', 'S.ST', 'S.ST']      
+['S.ST', '', '', '', 'S.ST', 'S.ST', 'S.ST', 'S.ST', '']              
+['S.ST', 'S.ST', 'WELL BEING', 'CLUB', 'S.ST', 'S.ST']                
+
+
+HAIFA
+['ARAB', 'ARAB', 'ARAB', 'ARAB', 'ARAB', '', 'ARAB', '', 'ARAB']      
+['ARAB', 'ARAB', 'ARAB', '', 'ARAB', 'ARAB', '', '', 'ARAB']          
+['ARAB', 'ARAB', '', 'ARAB', 'ARAB', 'ARAB', 'ARAB', '', '']          
+['ARAB', 'ARAB', 'ARAB', 'ARAB', '', '', 'ARAB', '', 'ARAB']          
+['', 'ARAB', 'ARAB', '', 'ARAB', 'ARAB']                              
+
+
+JASMINE
+['', '', 'USST', 'USST', 'USST', 'USST', 'USST', '', 'USST']          
+['', 'USST', '', 'USST', 'USST', 'USST', 'USST', '', '']              
+['', 'USST', '', '', 'USST', 'USST', '', '', 'USST']                  
+['USST', '', '', '', 'USST', 'USST', 'USST', '', 'USST']              
+['', 'USST', '', 'USST', '', 'USST']                                  
+
+
+BASHEER
+['I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED']
+['I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED']
+['I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED']
+['I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED']
+['I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED', 'I.ED']                      
+
+
+SHALINI
+['CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC']       
+['CSC', 'CSC', 'WELL BEING', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC']
+['CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC']       
+['CSC', 'CLUB', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC']      
+['CSC', 'CSC', 'CSC', 'CSC', 'CSC', 'CSC']                            
+
+
+BRINDA
+['', '', '', '', 'ENG', 'ENG', 'ENG', 'ENG', '']                      
+['ENG', 'ENG', 'ENG', 'CLUB', '', '', '', '', '']                     
+['ENG', 'ENG', 'ENG', 'ENG', '', '', '', 'ENG', 'ENG']                
+['', 'WELL BEING', 'ENG', 'ENG', '', '', '', '', 'ENG']               
+['', '', 'ENG', '', '', '']                                           
+
+
+DINESH
+['', '', '', '', '', '', 'PED', '', '']                               
+['', '', '', '', '', '', '', 'PED', '']                               
+['', '', '', 'PED', '', '', '', '', '']                               
+['', '', '', '', '', '', 'PED', 'PED', '']                            
+['', '', '', 'PED', '', '']                                           
+
+
+BANGERA
+['', '', '', '', '', '', '', '', '']                                  
+['', '', '', '', '', '', '', '', '']                                  
+['', '', '', '', '', '', '', '', '']                                  
+['', '', '', '', '', '', '', '', '']                                  
+['', '', '', '', '', '']                                              
+
+
+JITENDRA
+['', '', '', 'MUSIC', '', 'MUSIC', 'MUSIC', '', 'MUSIC']              
+['MUSIC', 'MUSIC', 'MUSIC', '', '', 'MUSIC', '', 'MUSIC', 'MUSIC']    
+['MUSIC', '', '', 'MUSIC', 'MUSIC', '', 'MUSIC', '', '']              
+['', '', '', '', '', '', '', '', 'MUSIC']                             
+['', 'MUSIC', 'MUSIC', 'MUSIC', 'MUSIC', '']                          
+
+
+AMIT
+['ART', 'ART', '', '', 'ART', '', '', '', 'ART']                      
+['', 'ART', '', '', '', 'ART', 'ART', '', 'ART']                      
+['', 'ART', 'ART', '', 'ART', 'ART', '', 'ART', '']                   
+['', '', '', '', 'ART', '', '', 'ART', 'ART']                         
+['', 'ART', 'ART', '', 'ART', 'ART']                                  
+
+
+SOBHA
+['SCIENCE', 'G.K', 'SCIENCE', 'GK', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']
+['SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']
+['SCIENCE', '', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']
+['SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'WELL BEING', 'SCIENCE']
+['SCIENCE', 'SCIENCE', 'SCIENCE', 'CLUB', 'SCIENCE', 'SCIENCE']       
+
+
+HIMA
+['S.ST', 'S.ST', 'S.ST', 'S.ST', '', 'S.ST', '', '', '']              
+['', '', '', '', 'GK', '', '', 'S.ST', 'GK']                          
+['', '', 'S.ST', '', '', 'GK', 'S.ST', 'WELL BEING', '']              
+['', '', 'S.ST', 'GK', 'S.ST', 'CLUB', 'S.ST', 'S.ST', 'S.ST']        
+['S.ST', 'S.ST', '', 'S.ST', 'S.ST', 'S.ST']                          
+
+
+NINA
+['', '', 'MATHS', '', 'MATHS', 'LIB', '', '', 'LIB']                  
+['', '', 'G.K', 'LIB', '', '', 'MATHS', '', '']                       
+['MATHS', '', 'LIB', '', '', 'MATHS', '', '', '']                     
+['', 'G.K', '', 'LIB', '', 'MATHS', 'MATHS', 'MATHS', 'LIB']          
+['', '', '', '', '', '']                                              
+
+
+ZUBEENA
+['HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND']
+['HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'LIB', 'HIND', 'HIND']
+['HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND']
+['HIND', '', 'HIND', 'LIB', '', 'HIND', 'HIND', '', 'HIND']           
+['LIB', '', '', '', 'HIND', 'HIND']                                   
+
+
+JUNO ABRAHAM
+['', '', 'G.K', '', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE']
+['', 'SCIENCE', '', 'SCIENCE', '', '', 'GK', 'WELL BEING', 'SCIENCE'] 
+['', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'CLUB', '', 'SCIENCE']
+['SCIENCE', '', '', '', '', 'SCIENCE', '', 'SCIENCE', '']             
+['', 'SCIENCE', '', 'SCIENCE', 'SCIENCE', '']                         
+
+
+NAEEMA
+['', '', '', 'USST', 'USST', 'USST', '', '', '']                      
+['USST', '', '', 'USST', '', 'USST', '', 'USST', '']                  
+['USST', 'USST', '', '', '', '', 'USST', '', 'USST']                  
+['USST', '', '', '', 'USST', '', '', 'USST', '']                      
+['', '', 'USST', '', '', '']                                          
+
+
+TIWARI
+['', 'HIND', '', '', '', 'HIND', '', 'G.K', 'HIND']                   
+['G.K', '', 'HIND', 'HIND', '', '', 'HIND', 'HIND', 'HIND']           
+['', 'HIND', 'HIND', 'HIND', 'HIND', '', 'LIB', '', '']               
+['', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', '', 'HIND', '']          
+['', '', 'HIND', 'HIND', 'HIND', 'HIND']                              
+
+
+MONIKA
+['MATHS', 'MATHS', 'MATHS', 'MATHS', '', '', '', 'MATHS', '']         
+['', 'MATHS', '', '', '', 'MATHS', 'MATHS', 'MATHS', '']              
+['', 'MATHS', 'MATHS', '', 'LIB', 'MATHS', '', 'MATHS', '']           
+['CLUB', '', '', '', '', 'MATHS', '', 'MATHS', 'MATHS']               
+['WELL BEING', '', '', 'MATHS', 'MATHS', 'MATHS']                     
+
+
+GAYATHRI
+['G.K', 'SCIENCE', 'SCIENCE', '', '', 'SCIENCE', 'SCIENCE', '', 'LIB']
+['SCIENCE', '', '', '', 'LIB', '', '', '', '']                        
+['LIB', '', 'LIB', '', '', '', 'G.K', '', 'G.K']                      
+['SCIENCE', 'SCIENCE', '', '', '', '', 'GK', '', 'LIB']               
+['', '', '', 'LIB', '', '']                                           
+
+
+ROSE
+['', 'MATHS', '', '', 'CLUB', 'MATHS', '', 'MATHS', '']               
+['', 'MATHS', 'MATHS', 'MATHS', '', 'MATHS', 'MATHS', '', '']         
+['MATHS', 'LIB', 'MATHS', '', '', 'MATHS', '', '', 'LIB']             
+['', '', 'MATHS', 'WELL BEING', 'G.K', '', 'MATHS', 'MATHS', '']      
+['', 'G.K', '', 'MATHS', '', '']                                      
+
+
+ANU
+['MATHS', 'MATHS', '', '', 'MATHS', '', 'MATHS', '', '']              
+['', 'MATHS', '', 'MATHS', '', 'MATHS', 'WELL BEING', 'MATHS', 'MATHS']
+['GK', '', 'MATHS', 'MATHS', '', '', '', 'MATHS', '']                 
+['MATHS', 'MATHS', 'MATHS', '', 'MATHS', '', 'MATHS', 'MATHS', 'CLUB']
+['', 'MATHS', 'MATHS', 'GK', '', '']                                  
+
+
+DIMPLE
+['', '', 'SCIENCE', '', '', 'SCIENCE', 'G.K', 'SCIENCE', '']          
+['WELL BEING', '', 'SCIENCE', '', '', '', '', '', 'SCIENCE']          
+['', 'SCIENCE', 'G.K', '', 'SCIENCE', 'CLUB', 'SCIENCE', 'SCIENCE', '']
+['', '', 'G.K', '', 'SCIENCE', '', 'SCIENCE', 'G.K', '']              
+['', 'SCIENCE', 'SCIENCE', '', 'SCIENCE', '']                         
+
+
+KUNAL
+['', '', '', '', '', '', '', 'PED', '']                               
+['', '', 'PED', 'PED', 'PED', 'PED', 'PED', '', '']                   
+['', '', '', '', '', 'PED', 'PED', 'PED', '']                         
+['PED', '', '', '', '', 'PED', '', '', '']                            
+['', '', '', '', '', '']                                              
+
+
+FARRAH
+['HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND', 'HIND']
+['HIND', 'G.K', 'HIND', 'HIND', 'HIND', '', 'HIND', 'G.K', '']        
+['HIND', 'HIND', 'LIB', 'HIND', '', '', '', 'HIND', '']               
+['HIND', 'HIND', 'HIND', '', 'HIND', '', '', '', 'HIND']              
+['HIND', '', 'HIND', 'HIND', '', '']                                  
+
+
+SHINY
+['MATHS', 'MATHS', '', '', 'CLUB', '', '', '', '']                    
+['MATHS', '', 'MATHS', '', 'MATHS', '', '', 'MATHS', '']              
+['', 'MATHS', '', '', 'MATHS', 'MATHS', 'WELL BEING', '', 'MATHS']    
+['MATHS', 'MATHS', '', 'MATHS', 'MATHS', '', '', 'MATHS', '']         
+['MATHS', '', '', 'MATHS', 'MATHS', 'MATHS']                          
+
+
+NIBHA
+['', '', '', '', 'ENG', '', 'ENG', 'ENG', 'GK']                       
+['ENG', '', 'ENG', '', 'ENG', 'ENG', '', 'ENG', 'ENG']                
+['', 'ENG', 'ENG', 'GK', 'CLUB', '', 'ENG', 'WELL BEING', 'ENG']      
+['ENG', 'ENG', '', '', 'ENG', 'ENG', 'ENG', '', '']                   
+['', 'ENG', '', '', 'ENG', 'ENG']                                     
+
+
+SIBY
+['', '', '', 'S.ST', '', '', '', 'S.ST', '']                          
+['', '', 'S.ST', 'S.ST', 'S.ST', 'S.ST', 'S.ST', 'S.ST', '']          
+['S.ST', 'S.ST', '', '', 'S.ST', 'CLUB', 'S.ST', '', 'S.ST']          
+['WELL BEING', 'S.ST', '', 'S.ST', '', '', '', 'S.ST', 'S.ST']        
+['S.ST', '', 'GK', '', 'G.K', '']                                     
+
+
+RAGDAH
+['', 'ARAB', 'ARAB', 'ARAB', 'ARAB', '', 'ARAB', '', '']              
+['', '', 'ARAB', 'ARAB', 'ARAB', 'ARAB', '', '', 'ARAB']              
+['ARAB', 'ARAB', 'ARAB', 'ARAB', '', 'ARAB', 'ARAB', '', 'ARAB']      
+['', 'ARAB', 'ARAB', 'ARAB', 'ARAB', 'ARAB', 'ARAB', '', '']          
+['ARAB', 'ARAB', '', 'ARAB', '', 'ARAB']                              
+
+
+GULSHAN
+['', '', '', '', '', '', 'CSC', '', '']                               
+['CSC', '', '', '', 'CSC', '', 'CSC', '', '']                         
+['', 'CSC', '', '', '', '', '', '', 'CSC']                            
+['', 'CSC', '', 'CSC', '', 'CSC', '', 'CSC', 'CSC']                   
+['CSC', 'CSC', 'CSC', '', '', '']                                     
+
+
+SANGAMITRA
+['ENG', 'ENG', '', '', '', 'G.K', '', '', '']                         
+['', '', '', '', 'ENG', 'ENG', 'ENG', 'ENG', '']                      
+['ENG', 'GK', 'ENG', 'ENG', 'ENG', 'ENG', '', 'ENG', '']              
+['', '', '', 'ENG', '', 'ENG', '', '', '']                            
+['', 'ENG', 'ENG', '', 'ENG', 'CLUB']                                 
+
+
+SANGEETHA
+['S.ST', 'S.ST', '', 'S.ST', 'S.ST', '', 'S.ST', 'S.ST', 'S.ST']      
+['GK', '', '', '', '', '', '', 'S.ST', 'S.ST']                        
+['S.ST', '', 'S.ST', '', '', '', '', 'WELL BEING', '']                
+['GK', '', 'S.ST', 'S.ST', 'S.ST', '', 'S.ST', '', 'S.ST']            
+['S.ST', '', '', 'S.ST', 'S.ST', 'CLUB']                              
+
+
+SINDHU
+['', 'S.ST', '', 'S.ST', 'GK', 'S.ST', 'S.ST', '', '']                
+['S.ST', 'S.ST', '', '', 'S.ST', '', 'S.ST', '', '']                  
+['', '', '', 'S.ST', 'S.ST', '', '', 'GK', 'S.ST']                    
+['S.ST', '', 'WELL BEING', '', 'S.ST', '', '', 'S.ST', 'S.ST']        
+['', 'CLUB', '', '', '', 'S.ST']                                      
+
+
+JAYASHREE
+['', '', 'CSC', 'CSC', '', '', '', 'CSC', '']                         
+['', 'CSC', '', '', 'CSC', 'WELL BEING', '', '', 'CSC']               
+['CSC', '', '', 'CSC', '', 'CSC', '', 'CSC', '']                      
+['CSC', 'CSC', '', 'CSC', 'CSC', 'CSC', 'CSC', 'CLUB', '']            
+['CSC', '', '', '', 'CSC', 'CSC']                                     
+
+
+ABDUL
+['ARAB', '', 'ARAB', 'ARAB', '', '', '', '', '']                      
+['ARAB', 'ARAB', 'ARAB', '', '', 'ARAB', 'ARAB', 'ARAB', 'ARAB']      
+['ARAB', '', 'ARAB', 'ARAB', '', 'ARAB', '', 'ARAB', 'ARAB']          
+['', 'ARAB', '', '', '', 'ARAB', 'ARAB', '', '']                      
+['', '', 'ARAB', 'ARAB', 'ARAB', '']                                  
+
+
+VINEETHA
+['ENG', '', '', '', '', 'ENG', 'CLUB', '', '']                        
+['ENG', '', 'ENG', 'WELL BEING', 'ENG', 'ENG', '', 'ENG', 'ENG']      
+['', '', '', '', 'ENG', '', '', '', 'ENG']                            
+['', '', 'ENG', 'ENG', 'ENG', 'ENG', '', '', '']                      
+['ENG', 'ENG', 'ENG', '', '', 'ENG']                                  
+
+
+BEENA
+['SCIENCE', '', 'SCIENCE', '', '', '', '', '', '']                    
+['', 'SCIENCE', 'CLUB', '', '', '', 'SCIENCE', '', 'SCIENCE']         
+['SCIENCE', '', '', 'SCIENCE', 'SCIENCE', 'SCIENCE', '', '', 'SCIENCE']
+['SCIENCE', 'WELL BEING', 'SCIENCE', 'SCIENCE', 'SCIENCE', 'G.K', 'SCIENCE', 'SCIENCE', 'GK']
+['SCIENCE', 'SCIENCE', '', '', '', 'SCIENCE']                         
+
+
+LALITA
+['', '', '', '', '', '', '', '', 'HIND']                              
+['', '', '', '', '', '', '', '', '']                                  
+['', '', '', '', '', '', '', '', '']                                  
+['HIND', '', 'HIND', '', '', '', '', '', '']                          
+['HIND', '', 'HIND', '', '', '']                                      
+
+

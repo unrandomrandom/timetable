@@ -10,6 +10,7 @@ import numpy as np
 ###########################################
 # the spreadsheet parser
 ###########################################
+
 chdir(getcwd() + "/data")
 
 # helper
@@ -346,6 +347,7 @@ def createInitial(studentTimeTable, teacherTimeTable, classSubjectTeachers):
 
     printNicely(studentTimeTable)
     alsoPrintNicely(teacherTimeTable)
+
 
 
 # helper
