@@ -33,7 +33,6 @@ def nextIndex(currentIndex):
 def changePathDecorator(func):
     def runner():
         ogDir = getcwd()
-        chdir('..')
         if name == 'nt':        # windows
             chdir(getcwd() + "\\data")
         else:
