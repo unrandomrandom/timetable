@@ -72,7 +72,14 @@ for i, grades in enumerate(range(3)):
 
 teacherTimeTable_ = {}
 for i in teachersClasses_.keys():
-    teacherTimeTable_[i] =  [ [[]] * 9, [[]] * 9,  [[]] * 9, [[]] * 9, [[]] * 6 ]
+    teacherTimeTable_[i] =  [ 
+        [[] for i in range(9)], 
+        [[] for i in range(9)], 
+        [[] for i in range(9)], 
+        [[] for i in range(9)], 
+        [[] for i in range(6)], 
+    ]
+    
 
 class teacherPeriod:
     def __init__ (self, subject, grade, section):
@@ -88,22 +95,26 @@ class studentPeriod:
         self.section = section
         self.day = day
         self.period = period
-        self.teachers = {}
+        self.teachers = []
         gradeString = str(self.grade) + chr(self.section + ord('A'))
         if subject == 'I.ED/GK':
-            self.teachers['I.ED'] = classSubjectTeachers_[gradeString]['I.ED']
-            self.teachers['G.K'] = classSubjectTeachers_[gradeString]['G.K']
+            self.teachers.append(classSubjectTeachers_[gradeString]['I.ED'])
+            self.teachers.append(classSubjectTeachers_[gradeString]['G.K'])
+            subs = ['I.ED', 'G.K']
         elif subject == 'WELL BEING':
-            self.teachers['WELL BEING'] = classSubjectTeachers_[gradeString]['W.E/Club']
+            self.teachers.append(classSubjectTeachers_[gradeString]['W.E/Club'])
+            subs = ['WELL BEING']
         elif subject == 'CLUB':
-            self.teachers['CLUB'] = classSubjectTeachers_[gradeString]['W.E/Club']
-            self.teachers['ROBOTICS'] = classSubjectTeachers_[gradeString]['ROBOTICS']
-            self.teachers['STEAM'] = classSubjectTeachers_[gradeString]['STEAM']
+            self.teachers.append(classSubjectTeachers_[gradeString]['W.E/Club'])
+            self.teachers.append(classSubjectTeachers_[gradeString]['ROBOTICS'])
+            self.teachers.append(classSubjectTeachers_[gradeString]['STEAM'])
+            subs = ['CLUB', 'ROBOTICS', 'STEAM']
         else:
-            self.teachers[subject] = classSubjectTeachers_[gradeString][subject]
+            self.teachers.append(classSubjectTeachers_[gradeString][subject])
+            subs = [subject]
 
-        for tr in self.teachers:
-            teacherTimeTable_[tr][self.day][self.period].append([self.grade, self.section, self.subject])
+        for sub, tr in zip(subs, self.teachers):
+            teacherTimeTable_[tr][self.day][self.period].append([self.grade, self.section, sub])
 
     def getClashes(self):
         for tr in self.teachers:
@@ -301,11 +312,14 @@ def runner():
 
     print("checking the initial allotment counts of the teachers")
     checkTeacherAllotment(classSubjectTeachers_, periodsPerWeek_)
+
+    def accessPeriod(grades, g, s, d, p):
+        return grades[g].classes[s].periods[d][p].subject
     
     for g in grades:
         g.initialArrange()
 
-    dumpStudentAllocation(grades)
+    dumpStudentAllocation(grades, lambda grades, g, s, d, p: grades[g].classes[s].periods[d][p])
 
     for g in grades:
         g.setSchedule()
@@ -314,10 +328,12 @@ def runner():
         g.resolveConflicts()
 
     print("checking the final allotment of grades of each class ")
-    checkPeriodCounts(grades, periodsPerWeek_, teacherTimeTable_)
+    checkPeriodCounts(grades, periodsPerWeek_, classSubjectTeachers_, lambda x: x.subject)
 
-    # TODO restructure the dump functions for new structure of grades 
-    dumpStudentAllocation(grades)
+    dumpStudentAllocation(
+        grades, 
+        lambda grades, g, s, d, p: grades[g].classes[s].periods[d][p].subject
+    )
     dumpTeacherAllocation(teacherTimeTable_)
 
 runner()

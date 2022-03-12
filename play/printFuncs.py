@@ -1,6 +1,6 @@
 #helper
 # prints a 3 * 7 * 42 | 3 * 7 * [9,9,9,9,6] thing nicely
-def dumpStudentAllocation(data):
+def dumpStudentAllocation(data, accessPeriod):
 
     f  = open('studentdump.txt', "w+")
 
@@ -22,7 +22,9 @@ def dumpStudentAllocation(data):
                 counter = 0
                 smallStr = ''
                 while counter < periodsPerDay[foo]:
-                    smallStr += str(data[grade].classes[section].periods[row][counter]).center(15) + ", "
+                    smallStr += str(
+                        accessPeriod(data, grade, section, row, counter)
+                    ).center(15) + ", "
                     counter += 1
                 smallStr = smallStr.ljust(200)    
                 smallStr += " | "
